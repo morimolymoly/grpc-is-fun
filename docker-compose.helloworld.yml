@@ -16,5 +16,5 @@ services:
       context: .
       dockerfile: DockerfileHelloWorldClient
     volumes:
-      - ".:/Users/mizuho/go/src/github.com/morimolymoly/grpc-is-fun"
+      - ".:/go/src/github.com/morimolymoly/grpc-is-fun"
     command: go run /go/src/github.com/morimolymoly/grpc-is-fun/helloworld/client/main.go
