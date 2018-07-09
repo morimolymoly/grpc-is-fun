@@ -1,0 +1,8 @@
+FROM golang:latest
+
+ADD . /go/src/github.com/morimolymoly/grpc-is-fun
+
+WORKDIR /go/src/github.com/morimolymoly/grpc-is-fun
+RUN go install github.com/morimolymoly/grpc-is-fun/helloworld/server
+EXPOSE 8100
+CMD ["/go/bin/server"]

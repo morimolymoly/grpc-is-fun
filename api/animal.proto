@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package api;
+
+service AnimalService {
+    rpc GetAllAnimals (GetAllAnimalsRequest) returns (Animals) {}
+    rpc GetAnimal (GetAnimalRequest) returns (Animal) {}
+    rpc GetAnimalById (GetAnimalByIdRequest) returns (Animal) {}
+}
+
+message GetAllAnimalsRequest {}
+
+message GetAnimalRequest {
+    string Name = 1;
+}
+
+message GetAnimalByIdRequest {
+    int64 ID = 1;
+}
+
+enum AnimalType {
+    DOG = 0;
+    CAT = 1;
+    HIPPOPOTAMUS = 2;
+}
+
+message Animal {
+    int64 ID = 1;
+    string Name = 2;
+    string Nakigoe = 3;
+}
+
+message Animals {
+  repeated Animal animal = 1;
+}

@@ -1,0 +1,20 @@
+version: '2'
+services:
+  server:
+    container_name: grpc_helloworld_server
+    build:
+      context: .
+      dockerfile: DockerfileHelloWorldServer
+    ports:
+      - 8100:8100
+    volumes:
+      - ".:/Users/mizuho/go/src/github.com/morimolymoly/grpc-is-fun"
+    command: go run /go/src/github.com/morimolymoly/grpc-is-fun/helloworld/server/main.go
+  client:
+    container_name: grpc_helloworld_client
+    build:
+      context: .
+      dockerfile: DockerfileHelloWorldClient
+    volumes:
+      - ".:/Users/mizuho/go/src/github.com/morimolymoly/grpc-is-fun"
+    command: go run /go/src/github.com/morimolymoly/grpc-is-fun/helloworld/client/main.go
