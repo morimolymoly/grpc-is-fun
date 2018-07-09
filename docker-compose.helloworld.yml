@@ -8,7 +8,7 @@ services:
     ports:
       - 8100:8100
     volumes:
-      - ".:/Users/mizuho/go/src/github.com/morimolymoly/grpc-is-fun"
+      - ".:/go/src/github.com/morimolymoly/grpc-is-fun"
     command: go run /go/src/github.com/morimolymoly/grpc-is-fun/helloworld/server/main.go
   client:
     container_name: grpc_helloworld_client
